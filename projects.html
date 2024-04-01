@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    
+    <!-- include Alpine -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2"></script>
+    <script src="script.js"></script>
+    
+    <!-- include HTMX -->
+    <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
+    
+    <title>Learn Tailwind CSS</title>
+</head>
+
+<body class="w-full h-screen">
+    
+    <!-- create the landing page main layout featuring:
+        - a top main menu with a logo on the left and the menu on the right;
+        - a full height content area 
+        - large footer 
+    -->
+    <div id="layout" class="w-full h-screen flex flex-col">
+
+        <div id="top-navigation" class="bg-gray-800 text-white p-5 flex justify-between items-center w-full">
+            <div id="logo">
+                <!-- <img src="logo.svg" alt="Logo" class="h-10"> -->
+                <span class="text-2xl font-bold">Learn Tailwind CSS</span>
+            </div>
+            <div id="main-nav" class="flex">
+                <a href="#" class="px-4 py-2">Home</a>
+                <a href="#" class="px-4 py-2">About</a>
+                <a href="projects.html" class="px-4 py-2">Projects</a>
+                <a href="#" class="px-4 py-2">Contact</a>
+            </div>
+        </div>
+    
+        <div id="content" class="container h-screen flex justify-center p-4">
+
+            <div class="container mx-auto">
+                <h1 class="text-4xl font-bold text-center mt-10">Learn Tailwind CSS</h1>
+                <div class="grid grid-cols-3 gap-4 mt-10">
+                    <div class="bg-gray-200 p-4 rounded-lg">
+                        <h2 class="text-xl font-bold">HTMX</h2>
+                        <p>HTMX is a library that allows you to access AJAX, WebSockets and Server Sent Events directly in HTML, using attributes, so you can create modern web applications with minimal JavaScript.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4" hx-get="/htmx.php">Load Data</button>
+                    </div>
+                    <div class="bg-gray-200 p-4 rounded-lg">
+                        <h2 class="text-xl font-bold">Alpine.js</h2>
+                        <p>Alpine.js offers you the reactive and declarative nature of big frameworks like Vue or React at a much lower cost.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4" x-on:click="loadData()">Load Data</button>
+                    </div>
+                    <div class="bg-gray-200 p-4 rounded-lg">
+                        <h2 class="text-xl font-bold">Tailwind CSS</h2>
+                        <p>Tailwind CSS is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4" hx-get="/tailwind.php">Load Data</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <footer id="footer" class="bg-gray-800 text-white py-4 text-center">
+            &copy; 2021 Learn Tailwind CSS
+        </footer>
+    
+    </div>
+
+
+
+
+</body>
+</html>
